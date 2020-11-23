@@ -1,4 +1,5 @@
 .vscode
-devops-ci-cd
+env
 .azure
 __pycache__
+devops-ci-cd
