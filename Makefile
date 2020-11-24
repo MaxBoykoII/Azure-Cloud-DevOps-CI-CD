@@ -7,6 +7,6 @@ test:
 	python -m pytest "project/tests"
 
 lint:
-	pylint --disable=R,C hello.py
+	flake8 project
 
 all: install lint test
