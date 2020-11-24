@@ -1,5 +1,5 @@
 pylint
-pytest
+pytest==5.3.5
 flask==1.1.1
 flask-restx==0.1.1
 Werkzeug==0.16.1

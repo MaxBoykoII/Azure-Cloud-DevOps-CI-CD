@@ -3,3 +3,4 @@ env
 .azure
 __pycache__
 devops-ci-cd
+.pytest_cache
