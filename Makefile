@@ -4,7 +4,7 @@ install:
 		pip install -r requirements.txt
 
 test:
-	python -m pytest -v test_hello.py
+	python -m pytest "project/tests"
 
 lint:
 	pylint --disable=R,C hello.py
