@@ -1,4 +1,3 @@
-import os
 
 
 def test_development_config(test_app):
