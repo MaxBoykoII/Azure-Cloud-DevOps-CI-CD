@@ -1,7 +1,4 @@
-FROM python:3.8.1-alpine
-
-RUN apk update && \
-    apk add --virtual build-deps gcc python-dev musl-dev
+FROM python:3.9.0-slim-buster
 
 WORKDIR /usr/src/app
 
