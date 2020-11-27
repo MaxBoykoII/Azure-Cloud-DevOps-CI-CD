@@ -1,10 +1,10 @@
 import pytest
 
-from project import app
+from src import app
 
 
 @pytest.fixture(scope="module")
 def test_app():
-    app.config.from_object("project.config.TestingConfig")
+    app.config.from_object("src.config.TestingConfig")
     with app.app_context():
         yield app
