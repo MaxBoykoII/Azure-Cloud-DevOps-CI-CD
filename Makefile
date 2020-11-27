@@ -7,6 +7,6 @@ test:
 	python -m pytest "src/tests"
 
 lint:
-	flake8 project
+	flake8 src
 
 all: install lint test
