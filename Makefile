@@ -4,7 +4,7 @@ install:
 		pip install -r requirements.txt
 
 test:
-	python -m pytest "project/tests"
+	python -m pytest "src/tests"
 
 lint:
 	flake8 project
