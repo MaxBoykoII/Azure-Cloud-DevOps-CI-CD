@@ -9,4 +9,7 @@ test:
 lint:
 	flake8 src
 
-all: install lint test
+format:
+	black src --check
+
+all: install lint format test
