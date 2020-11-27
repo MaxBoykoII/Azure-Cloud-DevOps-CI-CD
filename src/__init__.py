@@ -7,8 +7,7 @@ def create_app(script_info=None):
 
     app = Flask(__name__)
 
-    app_settings = os.getenv("APP_SETTINGS")
-    app.config.from_object(app_settings)
+    set_config(app)
 
     from src.api.ping import ping_blueprint
 
@@ -19,3 +18,8 @@ def create_app(script_info=None):
         return {"app": app}
 
     return app
+
+
+def set_config(app):
+    app_settings = os.getenv("APP_SETTINGS")
+    app.config.from_object(app_settings)
