@@ -7,7 +7,8 @@ test:
 	python -m pytest "src/tests"
 
 lint:
-	flake8 src
+	flake8 src &&\
+		isort src --check-only
 
 format:
 	black src --check
