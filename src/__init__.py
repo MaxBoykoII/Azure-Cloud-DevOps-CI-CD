@@ -5,23 +5,23 @@ from flask import Flask
 
 def create_app(script_info=None):
     app = Flask(__name__)
-    factory = AppFactory(app)
 
-    factory.configure()
+    config = AppConfig(app)
+    config.configure()
 
     return app
 
 
-class AppFactory:
+class AppConfig:
     def __init__(self, app):
         self.app = app
 
     def configure(self):
-        self.set_config()
+        self.set_settings()
         self.set_blueprints()
         self.set_ctx()
 
-    def set_config(self):
+    def set_settings(self):
         app_settings = os.getenv("APP_SETTINGS")
         self.app.config.from_object(app_settings)
 
