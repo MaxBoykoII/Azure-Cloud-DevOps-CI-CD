@@ -27,8 +27,10 @@ class AppConfig:
 
     def set_blueprints(self):
         from src.api.ping import ping_blueprint
+        from src.api.predict import predict_blueprint
 
         self.app.register_blueprint(ping_blueprint)
+        self.app.register_blueprint(predict_blueprint)
 
     def set_ctx(self):
         app = self.app
