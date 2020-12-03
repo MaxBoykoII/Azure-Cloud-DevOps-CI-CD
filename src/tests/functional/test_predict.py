@@ -26,3 +26,16 @@ def test_predict(test_app):
     assert resp.status_code == 201
     assert "prediction" in data
     assert isinstance(data["prediction"][0], float)
+
+
+def test_predict_invalid_json(test_app):
+    # Given
+    client = test_app.test_client()
+
+    # When
+    resp = client.post("/predict", data=json.dumps({}), content_type="application/json")
+
+    # Then
+    data = json.loads(resp.data.decode())
+    assert resp.status_code == 400
+    assert "Input payload validation failed" in data["message"]
