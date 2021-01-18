@@ -5,10 +5,10 @@ trigger:
 
 variables:
   location: 'West US 2'
-  arcHostName: 'mb-udacity.azurecr.io'
-  arcName: 'mb-udacity'
-  rgName: 'mb-udacity-rg'
-  imageName: 'mb-udacity'
+  arcHostName: 'mbudacity.azurecr.io'
+  arcName: 'mbudacity'
+  rgName: 'mbudacity-rg'
+  imageName: 'mbudacity'
 
 
 stages:
