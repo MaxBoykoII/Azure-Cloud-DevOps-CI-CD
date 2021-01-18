@@ -28,5 +28,5 @@ stages:
           azureSubscription: 'AzureSC'
           resourceGroupName: $(rgName)
           location: $(location)
-          cmsFile: '$(System.DefaultWorkingDirectory)/**/container-registry-template.json'
+          csmFile: '$(System.DefaultWorkingDirectory)/**/container-registry-template.json'
           overrideParameters: '-registryName "$(acrName)" -registryLocation "$(location)" -registrySku standard'
