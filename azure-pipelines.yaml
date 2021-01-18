@@ -1,0 +1,32 @@
+trigger:
+  branches:
+    include:
+    - master
+
+variables:
+  location: 'West US 2'
+  arcHostName: 'mb-udacity.azurecr.io'
+  arcName: 'mb-udacity'
+  rgName: 'mb-udacity-rg'
+  imageName: 'mb-udacity'
+
+
+stages:
+
+# Build Stage
+  - stage: Build
+    jobs:
+    - job: Build
+      pool: 
+        vmImage: 'Ubuntu-16.04'
+      steps:
+
+      # Create or update the Azure Container Registry
+      - task: AzureResourceGroupDeployment@2
+        displayName: 'Azure Deployment: Create Azure Container Registry'
+        inputs:
+          azureSubscription: 'AzureSC'
+          resourceGroupName: $(rgName)
+          location: $(location)
+          cmsFile: '$(System.DefaultWorkingDirectory)/**/container-registry-template.json'
+          overrideParameters: '-registryName "$(acrName)" -registryLocation "$(location)" -registrySku standard'

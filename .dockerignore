@@ -4,3 +4,5 @@ README.md
 Dockerfile
 Dockerfile.prod
 project-planning
+azure-pipelines.yaml
+arm-templates
