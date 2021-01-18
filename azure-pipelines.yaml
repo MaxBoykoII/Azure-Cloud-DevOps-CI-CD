@@ -6,7 +6,7 @@ trigger:
 variables:
   location: 'West US 2'
   arcHostName: 'mbudacity.azurecr.io'
-  arcName: 'mbudacity'
+  acrName: 'mbudacity'
   rgName: 'mbudacity-rg'
   imageName: 'mbudacity'
 
